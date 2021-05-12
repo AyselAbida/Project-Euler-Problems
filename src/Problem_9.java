@@ -9,5 +9,21 @@
 
 
 public class Problem_9 {
-
+	private static final int PERIMETER = 1000;
+		
+		public static String pythagoreanTriplet() {
+			for (int a = 1; a < PERIMETER; a++) {
+				for (int b = a + 1; b < PERIMETER; b++) {
+					int c = PERIMETER - a - b;
+					if (a * a + b * b == c * c) {
+						return Integer.toString(a * b * c);
+					}
+				}
+			}
+			throw new AssertionError("Not found");
+	}
+		
+	public static void main(String[] args) {
+		System.out.println(pythagoreanTriplet());
+	}
 }
